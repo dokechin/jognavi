@@ -1,0 +1,8 @@
+% layout 'bootstrap';
+% title 'Jognavi - ランニングコース記録共有サイト';
+% content_for head => begin
+% end
+
+<h2>登録が完了しました。</h2>
+
+  

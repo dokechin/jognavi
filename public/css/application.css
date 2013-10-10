@@ -1,0 +1,12 @@
+html, body {
+height: 100%;
+width: 100%;
+background-color: #C3EDFD;
+}
+
+img.brand {
+  padding: 1px;
+}
+#footer{
+  background-color : #FFC90E;
+}

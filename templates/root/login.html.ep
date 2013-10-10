@@ -1,0 +1,21 @@
+% layout 'bootstrap';
+% title 'Jognavi - ジョギング情報サイト';
+<div class="row">
+  <div class="pano col-xs-9 col-sm-9 col-md-9">
+    <h2>User Login</h2>
+
+    <a class="btn" href="/auth/twitter/authenticate">
+    <i class="icon-twitter icon-4x" style="color:#00ACEE"></></i>Longin by Twitter
+    </a>
+
+    <a class="btn" href="/auth/facebook/authenticate">
+    <i class="icon-facebook icon-4x" style="color:#3b5998"></i>Longin by Facebook
+    </a>
+  
+  </div>
+
+  <div class="col-xs-3 col-sm-3 col-md-3">
+    <%= include 'adsense/nike' %>
+  </div>
+</div>
+
