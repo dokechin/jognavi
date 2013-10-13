@@ -17,7 +17,19 @@
     <p>list view</p>
   </div>
   <div id ="add_record_view" class="hide col-xs-6 col-sm-6 col-md-6">
-    <p>add view</p>
+    <form id="add_view" role="form">
+      <div class="form-group">
+        <label for="run_date">走行日</label>
+        <input name="run_date" class="input-lg" id="run_date" type="text" placeholder="YYYY-MM-DD">
+      </div>
+      <div class="form-group">
+        <label for="run_time">タイム</label>
+        <input name="run_time" class="input-lg" id="run_time" type="text" placeholder="HH:MM:SS">
+      </div>
+      <ul id="my_course_view" class="course_bxslider"></ul>
+      <ul id="my_record_equipment_view" class="record_equipment_bxslider"></ul>
+      <button class="input-lg btn-info"><i class="icon-pencil"></i>登録</button>
+    </form>
   </div>
   <div id ="equipment_view" class="hide col-xs-6 col-sm-6 col-md-6">
     <div id="my_equipments_view">
@@ -37,6 +49,7 @@
 <script type="text/javascript" src="js/mypage/NavisView.js"></script>
 <script type="text/javascript" src="js/mypage/Equipment.js"></script>
 <script type="text/javascript" src="js/mypage/Equipments.js"></script>
+<script type="text/javascript" src="js/mypage/MyEquipment.js"></script>
 <script type="text/javascript" src="js/mypage/MyEquipments.js"></script>
 <script type="text/javascript" src="js/mypage/EquipmentView.js"></script>
 <script type="text/javascript" src="js/mypage/EquipmentsView.js"></script>
@@ -96,7 +109,6 @@
       },
       deleteRow: function (e) {
         e.preventDefault();
-        this.model.collection.remove(this.model);
         this.model.destroy();
       },
       render: function () {
@@ -142,7 +154,7 @@
   ];
   var g_grid;
   var g_equipments = new Equipments([]);
-  var g_my_equipments = new MyEquipments();
+  var g_my_equipments = new MyEquipments([]);
   var bxslider;
   g_my_equipments.fetch();
   g_grid = new Backgrid.Grid({

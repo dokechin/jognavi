@@ -119,18 +119,20 @@ sub startup {
     $r->post('/search/routes')->to('search#routes');
     $r->get('/views/:id')->to('views#search');
 
-    $r->get('/myequipment')->to('myequipment#index');
-    $r->put('/myequipment/:id')->to('myequipment#update');
-    $r->post('/myequipment')->to('myequipment#create');
-    $r->delete('/myequipment:id')->to('myequipment#delete');
+    $logged_in->get('/myequipment')->to('myequipment#index');
+    $logged_in->put('/myequipment/:id')->to('myequipment#update');
+    $logged_in->post('/myequipment')->to('myequipment#create');
+    $logged_in->delete('/myequipment/:id')->to('myequipment#delete');
 
-    $r->post('/favorite/:id')->to('favorite#favorite');
-    $r->post('/unfavorite/:id')->to('favorite#unfavorite');
+    $logged_in->get('/myrecord')->to('myrecord#index');
+
+    $logged_in->post('/favorite/:id')->to('favorite#favorite');
+    $logged_in->post('/unfavorite/:id')->to('favorite#unfavorite');
 
     $r->get('/login')->to("root#login");
 
-    #   $logged_in->get('/mypage')->to("mypage#index");
-    $r->get('/mypage')->to("mypage#index");
+    $logged_in->get('/mypage')->to("mypage#index");
+#   $r->get('/mypage')->to("mypage#index");
 
     $r->get('/records')->to("record#index");
 

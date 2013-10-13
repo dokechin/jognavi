@@ -53,7 +53,7 @@ use DateTime::Format::MySQL;
     table {
         name 'Record';
         pk id;
-        columns qw( id user_id run_at route_id run_time url create_user create_at);
+        columns qw( id user_id run_at route_id run_time create_user create_at);
 
         inflate 'create_at' => sub {
             DateTime::Format::MySQL->parse_datetime(shift);

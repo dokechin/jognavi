@@ -1,6 +1,6 @@
 var MyEquipments = Backbone.Collection.extend({
-  model: Equipment,
-  url : "/myequipments"
+  model: MyEquipment,
+  url : "/myequipment"
 });
 
   

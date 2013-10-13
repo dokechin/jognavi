@@ -16,8 +16,15 @@ var EquipmentView = Backbone.View.extend({
         this.$el.html(value);
         return this;
 	},
-	add: function(event){
-	    g_my_equipments.create(this.model);
+	add: function(e){
+	    e.preventDefault();
+	    g_my_equipments.create({ 
+	    name : this.model.get("name"),
+	    url: this.model.get("url"),
+	    img: this.model.get("img"),
+	    store_name : this.model.get("store_name"),
+	    store_url : this.model.get("store_url"),
+	    distance : this.model.get("distance")});
 	}
 
 });
